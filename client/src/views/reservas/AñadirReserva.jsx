@@ -26,7 +26,7 @@ const AñadirReserva = () => {
         axios.post('http://localhost:8000/api/reserva', Reserva)
             .then(res => {
                 console.log(res.data.Reserva)
-                navegate("/")
+                navegate("/recepcion")
                 Swal.fire({
                     icon: "success",
                     title: "Genial!",

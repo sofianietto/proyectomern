@@ -1,0 +1,111 @@
+/* Colors */
+:root {
+  --PrimaryColor: hsl(29, 93%, 50%);
+  --HoverColor: hsl(26, 90%, 42%);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 18%);
+  --textColor: hsl(240, 1%, 48%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyBg: hsl(0, 0%, 96%);
+  --greyText: hsl(190, 190, 190);
+  --InputColor: hsl(330, 12%, 97%);
+}
+
+.navBarSection .header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  width: 100%;
+  padding: 1.5rem 2.5rem;
+  z-index: 1000;
+}
+.navBarSection .logoDiv .logo {
+  color: var(--PrimaryColor);
+  font-weight: 500;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+.navBarSection .logoDiv .logo .icon {
+  color: var(--PrimaryColor);
+  font-size: 25px;
+}
+@media screen and (max-width: 768px) {
+  .navBarSection .navBar {
+    background: var(--grayBg);
+    position: absolute;
+    height: -moz-max-content;
+    height: max-content;
+    padding: 1rem;
+    width: 100%;
+    top: 0;
+    left: -500%;
+    box-shadow: 0 2px 4px rgba(209, 209, 209, 0.904);
+    transition: 0.5s ease;
+    z-index: 1000;
+  }
+  .navBarSection .navBar .navList {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+  }
+  .navBarSection .navBar .navList .navItem {
+    padding: 1rem 0;
+  }
+  .navBarSection .navBar .navList .navItem .navLink {
+    color: var(--textColor);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .navBarSection .navBar .navList .navItem .navLink:hover {
+    color: var(--PrimaryColor);
+  }
+  .navBarSection .navBar .navList .headerBtns {
+    flex-direction: column;
+  }
+  .navBarSection .navBar .navList .headerBtns .btn {
+    margin-top: 1rem;
+  }
+  .navBarSection .navBar .navList .headerBtns .btn a {
+    font-weight: 600;
+  }
+  .navBarSection .navBar .navList .headerBtns .btn a:hover {
+    color: var(--whiteColor);
+  }
+  .navBarSection .navBar .navList .headerBtns .loginBtn {
+    background: none;
+    border: 1px solid;
+    border-color: var(--PrimaryColor);
+  }
+  .navBarSection .navBar .navList .headerBtns .loginBtn a {
+    color: var(--PrimaryColor);
+  }
+  .navBarSection .navBar .navList .headerBtns .loginBtn:hover {
+    background: var(--HoverColor);
+  }
+  .navBarSection .navBar .navList .headerBtns .loginBtn:hover a {
+    color: var(--whiteColor);
+  }
+  .navBarSection .navBar .closeNavbar {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: var(--PrimaryColor);
+  }
+  .navBarSection .navBar .closeNavbar:hover .icon {
+    color: var(--HoverColor);
+  }
+  .navBarSection .activeNavBar {
+    left: 0;
+  }
+}
+.navBarSection .toggleNavbar .icon {
+  font-size: 25px;
+  color: var(--whiteColor);
+}
+.navBarSection .toggleNavbar .icon:hover {
+  color: var(--PrimaryColor);
+}/*# sourceMappingURL=NavBar.css.map */
