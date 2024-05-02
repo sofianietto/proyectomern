@@ -7,6 +7,8 @@ import Reservas from './views/Reservas';
 import Recepcion from './views/Recepcion';
 import NavBar from './componentes/NavBar';
 import { useState } from 'react';
+import LandingPage from './LandingPage/LandingPage';
+import AñadirReserva from './componentes/AñadirReserva';
 
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
 
   return (
     <Routes>
+      <Route path='/home' element={<LandingPage />} />
+      <Route path="/añadirreservas" element={<AñadirReserva />} />
       <Route path='/' element={<NavBar />}>
         <Route path="/clientes" element={<AñadirCliente />} />
         <Route path="/reservas" element={<Reservas />} />
