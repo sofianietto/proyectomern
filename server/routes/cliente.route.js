@@ -2,7 +2,7 @@ const express = require("express");
 
 const ClienteController = require("../controllers/cliente.controller");
 const ClienteRouter = express.Router();
-
+const { authenticate } = require("../config/jwt.config");
 
 //api/ClienteS/
 ClienteRouter.post("/", ClienteController.createNewCliente);

@@ -12,7 +12,13 @@ module.exports = {
             })
             .catch(err => res.json(err));
     },
-
+    logout: (req, res) => {
+        // clear the cookie from the response
+        res.clearCookie("usertoken");
+        res.status(200).json({
+            message: "You have successfully logged out of our system",
+        });
+    },
     login: (req, res) => {
         UserModel.findOne({ email: req.body.email })
             .then(user => {

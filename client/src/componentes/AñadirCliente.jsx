@@ -1,5 +1,5 @@
 import { useState } from "react"
-import  useForm  from "../../hooks/useForm"
+import  useForm  from "../hooks/useForm"
 import axios from "axios"
 import Swal from 'sweetalert2'
 import { NavLink, useNavigate } from "react-router-dom"
@@ -20,7 +20,7 @@ const AñadirCliente = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:8000/api/cliente', Cliente)
+        axios.post('http://localhost:8000/api/cliente', Cliente, { withCredentials: true })
             .then(res => {
                 console.log(res.data.Cliente)
                 navegate("/")

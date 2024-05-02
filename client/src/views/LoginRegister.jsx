@@ -1,6 +1,6 @@
 import UserForm from '../componentes/UserForm'
 
-const login = () => {
+const LoginRegister = () => {
     return (
         <div className="container mt-3">
             <h1>Login y Registro</h1>
@@ -17,4 +17,4 @@ const login = () => {
     )
 }
 
-export default login
+export default LoginRegister

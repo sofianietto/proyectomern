@@ -1,8 +1,8 @@
-import useAxios from "../../hooks/useAxios"
+import useAxios from "../hooks/useAxios"
 
 const ListaHabitaciones = () => {
 
-    const {data, isLoading, error, setData} = useAxios('http://localhost:8000/api/habitacion')
+    const {data, isLoading, error, setData} = useAxios('http://localhost:8000/api/habitacion', { withCredentials: true })
     if(error){
         return <div>{error.message}</div>
     }
