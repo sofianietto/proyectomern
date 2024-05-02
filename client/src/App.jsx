@@ -4,7 +4,6 @@ import { Layout } from 'antd'
 import Logo from './componentes/logo'
 import MenuList from './componentes/MenuList';
 import AppRoutes from './componentes/AppRoutes';
-import { Route, Routes } from 'react-router-dom';
 
 
 
