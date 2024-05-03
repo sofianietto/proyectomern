@@ -2,7 +2,7 @@ import useAxios from "../hooks/useAxios"
 
 const ListaHabitaciones = () => {
 
-    const {data, isLoading, error, setData} = useAxios('http://localhost:8000/api/habitacion', { withCredentials: true })
+    const {data, isLoading, error, setData} = useAxios('http://localhost:8000/api/habitacion')
     if(error){
         return <div>{error.message}</div>
     }

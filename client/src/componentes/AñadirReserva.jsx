@@ -24,7 +24,7 @@ const AñadirReserva = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:8000/api/reserva', Reserva, { withCredentials: true })
+        axios.post('http://localhost:8000/api/reserva', Reserva)
             .then(res => {
                 console.log(res.data.Reserva)
                 navegate("/")

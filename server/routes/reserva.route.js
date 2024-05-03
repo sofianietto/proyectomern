@@ -2,7 +2,7 @@ const express = require("express");
 
 const ReservaController = require("../controllers/reserva.controller");
 const ReservaRouter = express.Router();
-const { authenticate } = require("../config/jwt.config");
+
 
 //api/RESERVAS/
 ReservaRouter.post("/", ReservaController.createNewReserva);

@@ -2,7 +2,7 @@ import useAxios from "../hooks/useAxios"
 
 const ListaReserva = () => {
 
-    const {data, isLoading, error, setData} = useAxios('http://localhost:8000/api/reserva', { withCredentials: true })
+    const {data, isLoading, error, setData} = useAxios('http://localhost:8000/api/reserva')
     if(error){
         return <div>{error.message}</div>
     }

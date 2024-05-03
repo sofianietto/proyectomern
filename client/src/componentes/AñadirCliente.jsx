@@ -20,7 +20,7 @@ const AñadirCliente = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:8000/api/cliente', Cliente, { withCredentials: true })
+        axios.post('http://localhost:8000/api/cliente', Cliente)
             .then(res => {
                 console.log(res.data.Cliente)
                 navegate("/")

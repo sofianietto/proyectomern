@@ -18,7 +18,7 @@ const AñadirHabitacion = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:8000/api/habitacion', Habitacion, { withCredentials: true })
+        axios.post('http://localhost:8000/api/habitacion', Habitacion)
             .then(res => {
                 console.log(res.data.Habitacion)
                 navegate("/recepcion")
