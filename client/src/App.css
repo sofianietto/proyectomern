@@ -1,96 +1,122 @@
-.siderbar {
-    color: white;
-    background-color: #001529;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: .3s ease;
 }
 
-.logo {
+/* Colors */
+
+:root{
+    --PrimaryColor: hsl(137, 64%, 47%);
+    --HoverColor: hsl(137, 67%, 39%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --textColor: hsl(240, 1%, 48%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyBg: hsl(0, 0%, 96%);
+    --greyText: hsl(190, 190, 190);
+    --InputColor: hsl(330, 12%, 97%);
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+.section{
+    padding: 4rem 0 2rem;
+}
+
+.container{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.icon{
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.flex{
     display: flex;
     align-items: center;
-    justify-content: center;
-    color: white;
-    background-color: #001529;
-    padding: 10px;
-    margin-top: 20px;
 }
 
-.logo-icon {
-    width: 80px;
-    height: 80px;
-    display: flex;
+.grid{
+    display: grid;
     align-items: center;
-    justify-content: center;
-    font-size: 3.5rem;
-    border-radius: 50%;
-    background: #001529;
-
 }
 
-.menu-bar {
-    height: 88vh;
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    font-size: 1rem;
-    position: relative;
-    background: #001529;
-    color: white;
-
+.btn{
+    padding: .4rem 1.5rem;
+    background-color: var(--PrimaryColor);
+    border: none;
+    outline: none;
+    border-radius: 3rem;
+    cursor: pointer;
 }
 
-.content {
-    margin: 20px 30px;
+.btn a{
+    color: var(--whiteColor);
+    font-weight: 500;
 }
 
-.Header {
-    background-color: #001529;
+.btn:hover a{
+    color: var(--whiteColor)
 }
 
-.flex {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    flex: wrap;
-    margin-top: 10px;
-    margin-left: 10px;
+.secIntro{
+    max-width: 70%;
+    text-align: center;
+    margin: 0 auto 2rem;
 }
 
-.card {
-    width: 250px;
-    height: 100px;
+.secIntro .secTitle{
+    color: var(--blackColor);
+    line-height: 1.5rem;
+    padding: .5rem;
 }
 
-.logo-recepcion {
-    width: 60px;
-    height: 60px;
-    font-size: 3.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.secIntro p{
+    font-size: 13px;
+    color: var(--textColor);
+    font-weight: 500;
 }
 
-.card-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+img, video{
+    width: 100%;
+    height: auto;
 }
 
-.flex-2{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top:20px
+input{
+    font-size: 100%;
 }
 
-.card-title{
-    font-size: 3rem;
-    margin-left: 4px;
+/*  Estilos por defecto jejeje */	
+
+/*  Media Queries  jejeje */	
+@media screen and (min-width: 556px){
+    .mainContent{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.flex-1{
-    margin-left:10px;
+@media screen and (min-width: 884px){
+    .mainContent{
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-.card-text{
-    font-size: 1rem;
+@media screen and (min-width: 1240px){
+    .container{
+        width: 75% !important;
+        margin: auto !important;
+    }
 }

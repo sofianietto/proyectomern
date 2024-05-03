@@ -11,6 +11,8 @@ const UserForm = ({ formType }) => {
 
     const navigate = useNavigate()
 
+/*----------------------VALIDACIONES DE FORMULARIO----------------------*/
+
     const validationSchema = Yup.object().shape({
         email: Yup.string()
             .email('Este correo no es válido')
@@ -26,6 +28,8 @@ const UserForm = ({ formType }) => {
                 .required('Confirmar contraseña es requerido'),
         }),
     });
+
+/*----------------------VALIDACIONES DE FORMULARIO----------------------*/
 
     const handleSubmit = (values, { setSubmitting, resetForm, setErrors }) => {
         if (formType === "registro") {

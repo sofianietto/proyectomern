@@ -1,32 +1,42 @@
 import './App.css'
 import 'antd/dist/reset.css';
-import { Layout } from 'antd'
-import Logo from './componentes/logo'
-import MenuList from './componentes/MenuList';
-import AppRoutes from './componentes/AppRoutes';
 import { Route, Routes } from 'react-router-dom';
+import Habitaciones from './views/Habitaciones';
+import Reservas from './views/Reservas';
+import Recepcion from './views/Recepcion';
+import NavBar from './componentes/NavBar';
+import { useState } from 'react';
+import LandingPage from './LandingPage/LandingPage';
+import AñadirReserva from './componentes/AñadirReserva';
+import Clientes from './views/Clientes';
 
 
-
-const { Header, Content, Sider } = Layout;
 function App() {
+  const userDetails = JSON.parse(localStorage.getItem("user"));
+  const userInfo = userDetails ? userDetails : null;
+  const [user, setUser] = useState(userInfo)
+
+  const setUserKeyValue = (clave, valor) => {
+      setUser({ ...user, [clave]: valor })
+  }
+
+  const objetoContexto = {
+      user,
+      setUser,
+      setUserKeyValue
+  }
 
   return (
-    <>
-      <Layout>
-        <Sider className='siderbar'>
-          <Logo />
-          <MenuList />
-        </Sider>
-        <Layout>
-          <Header className='Header'>
-          </Header>
-          <Content className='content'>
-            <AppRoutes />
-          </Content>
-        </Layout>
-      </Layout>
-    </>
+    <Routes>
+      <Route path='/home' element={<LandingPage />} />
+      <Route path="/añadirreservas" element={<AñadirReserva />} />
+      <Route path='/' element={<NavBar />}>
+        <Route path="/clientes" element={<Clientes />} />
+        <Route path="/reservas" element={<Reservas />} />
+        <Route path="/habitaciones" element={<Habitaciones />} />
+        <Route path="/recepcion" element={<Recepcion />} />
+      </Route>
+    </Routes>
   )
 }
 

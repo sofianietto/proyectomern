@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
-import useAxios from "../../hooks/useAxios"
+import useAxios from "../hooks/useAxios"
 import { LuBedDouble } from "react-icons/lu";
+import "../css/recepcion.css"
 
 const Recepcion = () => {
 
@@ -24,15 +25,17 @@ const Recepcion = () => {
                         <div className="container">
                             <div className="card">
                                 <div className="card-body">
-                                    <div className="logo-recepcion">
-                                        <LuBedDouble />
-                                    </div>
-                                    <div className="flex-1">
-                                        <h5 className="card-title">{habitacion.numero}</h5>
-                                        <p className="card-text">{habitacion.tipo}</p>
-                                        <div className="flex-2">
-                                        <NavLink to="/addreserva" className="btn btn-primary">Reservar</NavLink>
+                                    <div className="flex">
+                                        <div className="logo-recepcion">
+                                            <LuBedDouble />
                                         </div>
+                                        <div className="aja">
+                                            <h5 className="card-title">{habitacion.numero}</h5>
+                                            <p className="card-text">{habitacion.tipo}</p>
+                                        </div>
+                                    </div>
+                                    <div className="boton">
+                                        <NavLink to="/reservas" className="btn btn-primary">Reservar</NavLink>
                                     </div>
                                 </div>
                             </div>

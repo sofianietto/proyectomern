@@ -1,5 +1,5 @@
 import { useState } from "react"
-import useForm from "../../hooks/useForm"
+import useForm from "../hooks/useForm"
 import axios from "axios"
 import Swal from 'sweetalert2'
 import { Navigate, useNavigate } from "react-router-dom"
@@ -21,14 +21,14 @@ const AñadirHabitacion = () => {
         axios.post('http://localhost:8000/api/habitacion', Habitacion)
             .then(res => {
                 console.log(res.data.Habitacion)
-                navegate("/")
+                navegate("/recepcion")
                 Swal.fire({
                     icon: "success",
                     title: "Genial!",
                     text: "Agregaste una Habitacion!!",
                 });
                 setError("")
-                Navigate("/listahabitaciones")
+                Navigate("/habitaciones")
             })
             .catch(err => {
                 console.log(err)

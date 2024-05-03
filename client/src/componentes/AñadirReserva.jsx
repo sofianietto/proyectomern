@@ -1,8 +1,9 @@
 import { useState } from "react"
-import useForm from "../../hooks/useForm"
+import useForm from "../hooks/useForm"
 import axios from "axios"
 import Swal from 'sweetalert2'
 import { useNavigate } from "react-router-dom"
+import '../css/reservas.css'
 
 const AñadirReserva = () => {
     const navegate = useNavigate()
@@ -43,7 +44,7 @@ const AñadirReserva = () => {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <h1>Reservas</h1>
+                <h1>Reserva</h1>
                 <hr />
                 <div className="row">
                     <div className="col-6">
