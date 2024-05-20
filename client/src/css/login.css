@@ -1,9 +1,24 @@
+.back{
+    height: 100vh;
+    background-image: url('../assets/naturalez.jpg');
+    background-position: center center;
+    background-size: cover;
+
+}
+
 .mainContainer {
     flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 600px;
+    width: 450px;
+    margin-top: 300px;
+    margin: auto;
+    border: 2px solid rgb(129, 129, 129);
+    border-radius: 10px;
+    background-color: rgba(211, 211, 211, 0.37);
+
 }
 
 .titleContainer {
