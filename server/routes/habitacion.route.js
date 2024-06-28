@@ -8,7 +8,7 @@ const HabitacionRouter = express.Router();
 HabitacionRouter.post("/", HabitacionController.createNewHabitacion);
 HabitacionRouter.get("/", HabitacionController.getAllHabitacion);
 HabitacionRouter.get("/:id", HabitacionController.getOneHabitacionById);
-
+HabitacionRouter.delete("/:id", HabitacionController.deleteOneHabitacionById);
 
 
 

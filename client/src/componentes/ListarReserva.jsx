@@ -1,4 +1,6 @@
 import useAxios from "../hooks/useAxios"
+import Swal from 'sweetalert2'
+import EliminarReserva from "./EliminarReserva"
 
 const ListaReserva = () => {
 
@@ -11,6 +13,16 @@ const ListaReserva = () => {
         return <div>Loading...</div>
     }
 
+    const successEliminar = (reservaId) => {
+        console.log(reservaId)
+        Swal.fire({
+            icon: "success",
+            title: "Eliminado",
+            text: "eliminaste una reserva",
+        });
+        navegate("/recepcion")
+    }
+
     return (
         <div>
             <h1>Lista de Reservas</h1>
@@ -20,6 +32,7 @@ const ListaReserva = () => {
                         <th>nombre</th>
                         <th>Apellido</th>
                         <th>Fecha</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,6 +41,7 @@ const ListaReserva = () => {
                             <td>{reserva.nombre}</td>
                             <td>{reserva.apellido}</td>
                             <td>{reserva.fechaInicio}</td>
+                            <td> <EliminarReserva reservaId={reserva._id} successCallback={successEliminar} /></td>
                         </tr>
                     ))}
                 </tbody>

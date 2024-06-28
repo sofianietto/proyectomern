@@ -1,6 +1,9 @@
 import useAxios from "../hooks/useAxios"
+import Swal from 'sweetalert2'
+import EliminarCliente from "./EliminarCliente"
+import { useNavigate } from "react-router-dom";
 
-const ListaHabitaciones = () => {
+const ListaClientes = () => {
 
     const {data, isLoading, error, setData} = useAxios('http://localhost:8000/api/cliente')
     if(error){
@@ -11,15 +14,28 @@ const ListaHabitaciones = () => {
         return <div>Loading...</div>
     }
 
+    const successEliminar = (clienteId) => {
+        console.log(clienteId)
+        Swal.fire({
+            icon: "success",
+            title: "Eliminado",
+            text: "eliminaste un cliente",
+        });
+        useNavigate("/recepcion")
+    }
+
     return (
         <div>
-            <h1>Lista de Habitaciones</h1>
+            <h1>Lista de Clientes</h1>
             <table className="mt-4 table table-striped table-hover table-bordered">
                 <thead>
                     <tr>
-                        <th>Numero</th>
-                        <th>Tipo</th>
-                        <th>Descripcion</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>C.I</th>
+                        <th>Empresa</th>
+                        <th>Email</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,6 +46,7 @@ const ListaHabitaciones = () => {
                             <td>{cliente.ci}</td>
                             <td>{cliente.empresa}</td>
                             <td>{cliente.email}</td>
+                            <td> <EliminarCliente clienteId={cliente._id} successCallback={successEliminar} /></td>
                         </tr>
                     ))}
                 </tbody>
@@ -38,4 +55,4 @@ const ListaHabitaciones = () => {
     )
 }
 
-export default ListaHabitaciones
+export default ListaClientes

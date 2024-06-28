@@ -8,6 +8,7 @@ const ClienteRouter = express.Router();
 ClienteRouter.post("/", ClienteController.createNewCliente);
 ClienteRouter.get("/", ClienteController.getAllCliente);
 ClienteRouter.get("/:id", ClienteController.getOneClienteById);
+ClienteRouter.delete("/:id", ClienteController.deleteOneClienteById);
 
 
 

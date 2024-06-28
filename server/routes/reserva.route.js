@@ -9,6 +9,7 @@ ReservaRouter.post("/", ReservaController.createNewReserva);
 ReservaRouter.get("/", ReservaController.getAllReserva);
 ReservaRouter.get("/:id", ReservaController.getOneReservaById);
 ReservaRouter.delete("/:id", ReservaController.deleteOneReservaById);
+ReservaRouter.delete("/:id", ReservaController.deleteOneReservaById);
 
 
 
